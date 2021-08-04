@@ -1,0 +1,6 @@
+apiVersion: v2
+name: showcase-3d-printer-anomaly-detection
+description: Anomaly Detection for 3D-Printer Showcase
+type: application
+version: 0.1.0
+appVersion: '0.1.0'
