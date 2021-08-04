@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  showcase-3d-printer-anomaly-detection:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2021-08-04T16:33:01.264355224Z"
+    description: Anomaly Detection for 3D-Printer Showcase
+    digest: d97e3723483af33ddff335f1f9e127e8708cdc91b5289f1e20ab75aaf5d6e882
+    name: showcase-3d-printer-anomaly-detection
+    type: application
+    urls:
+    - https://github.com/innovation-hub-bergisches-rheinland/helm-charts/releases/download/showcase-3d-printer-anomaly-detection-0.1.0/showcase-3d-printer-anomaly-detection-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-08-04T16:33:01.264359524Z"
