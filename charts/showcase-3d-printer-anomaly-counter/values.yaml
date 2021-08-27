@@ -1,4 +1,4 @@
-# Default values for showcase-3d-printer-anomaly-detection.
+# Default values for showcase-3d-printer-anomaly-counter.
 
 config:
   # The name of the config map to use.

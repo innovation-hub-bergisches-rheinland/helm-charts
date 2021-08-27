@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "showcase-3d-printer-anomaly-detection.name" -}}
+{{- define "showcase-3d-printer-anomaly-counter.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "showcase-3d-printer-anomaly-detection.fullname" -}}
+{{- define "showcase-3d-printer-anomaly-counter.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "showcase-3d-printer-anomaly-detection.chart" -}}
+{{- define "showcase-3d-printer-anomaly-counter.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "showcase-3d-printer-anomaly-detection.labels" -}}
-helm.sh/chart: {{ include "showcase-3d-printer-anomaly-detection.chart" . }}
-{{ include "showcase-3d-printer-anomaly-detection.selectorLabels" . }}
+{{- define "showcase-3d-printer-anomaly-counter.labels" -}}
+helm.sh/chart: {{ include "showcase-3d-printer-anomaly-counter.chart" . }}
+{{ include "showcase-3d-printer-anomaly-counter.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "showcase-3d-printer-anomaly-detection.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "showcase-3d-printer-anomaly-detection.name" . }}
+{{- define "showcase-3d-printer-anomaly-counter.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "showcase-3d-printer-anomaly-counter.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "showcase-3d-printer-anomaly-detection.serviceAccountName" -}}
+{{- define "showcase-3d-printer-anomaly-counter.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "showcase-3d-printer-anomaly-detection.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "showcase-3d-printer-anomaly-counter.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}

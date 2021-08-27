@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "showcase-3d-printer-anomaly-detection.fullname" . }}
+  name: {{ include "showcase-3d-printer-anomaly-counter.fullname" . }}
   labels:
-    {{- include "showcase-3d-printer-anomaly-detection.labels" . | nindent 4 }}
+    {{- include "showcase-3d-printer-anomaly-counter.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{- include "showcase-3d-printer-anomaly-detection.selectorLabels" . | nindent 6 }}
+      {{- include "showcase-3d-printer-anomaly-counter.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -16,13 +16,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "showcase-3d-printer-anomaly-detection.selectorLabels" . | nindent 8 }}
+        {{- include "showcase-3d-printer-anomaly-counter.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "showcase-3d-printer-anomaly-detection.serviceAccountName" . }}
+      serviceAccountName: {{ include "showcase-3d-printer-anomaly-counter.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -40,7 +40,7 @@ spec:
       volumes:
         - name: config
           configMap:
-            name: {{ include "showcase-3d-printer-anomaly-detection.fullname" . }}
+            name: {{ include "showcase-3d-printer-anomaly-counter.fullname" . }}
             items:
               - key: config.yaml
                 path: config.yaml
@@ -48,6 +48,8 @@ spec:
                 path: schema/anomalies.avsc
               - key: data.avsc
                 path: schema/data.avsc
+              - key: anomaly_counter.avsc
+                path: schema/anomaly_counter.avsc
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

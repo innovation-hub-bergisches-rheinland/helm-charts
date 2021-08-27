@@ -2,9 +2,9 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ include "showcase-3d-printer-anomaly-detection.fullname" . }}
+  name: {{ include "showcase-3d-printer-anomaly-counter.fullname" . }}
   labels:
-    {{- include "showcase-3d-printer-anomaly-detection.labels" . | nindent 4 }}
+    {{- include "showcase-3d-printer-anomaly-counter.labels" . | nindent 4 }}
 data:
   anomalies.avsc: |
     {
@@ -55,14 +55,18 @@ data:
       KAFKA_BROKER_URL: kafka:9094
       KAFKA_CONSUMER_TIMEOUT_MS: 120000
 
-    anomaly_detection:
+    anomaly_counter:
       IN_TOPIC:
         showcase-3d-printer_prusa-esp32: data.avsc
-      IN_GROUP: ender_printer_anomaly_detection
-      OUT_TOPIC:
         ender_printer_anomalies: anomalies.avsc
-      JSON_QUERY: fields
-      DATA_COLUMNS: [ax, ay, az, gx, gy, gz]
+      IN_GROUP: showcase-3d-printer_anomaly-counter
+      OUT_TOPIC:
+        showcase-3d-printer_anomaly-counter: anomaly_counter.avsc
+      RAW_DATA_TOPIC: showcase-3d-printer_prusa-esp32
+      ANOMALY_TOPIC: ender_printer_anomalies
+      TEMPERATURE_SOURCE_TAG_KEY: topic
+      TEMPERATURE_SOURCE_TAG_VALUE: showcase-3d-printer/prusa-printer/temperature
+      SET_TEMPERATURE_FIELD_KEY: t_nozzle_set
   data.avsc: |
     {
       "name": "Data",
@@ -139,6 +143,38 @@ data:
         },
         {
           "name": "timestamp",
+          "type": "long"
+        }
+      ]
+    }
+  anomaly_counter.avsc: |
+    {
+      "name": "Anomaly_Count",
+      "namespace": "de.ihbr",
+      "type": "record",
+      "fields": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "start_timestamp",
+          "type": "long"
+        },
+        {
+          "name": "anomalies",
+          "type": "int"
+        },
+        {
+          "name": "duration",
+          "type": "int"
+        },
+        {
+          "name": "active",
+          "type": "boolean"
+        },
+        {
+          "name": "stop_timestamp",
           "type": "long"
         }
       ]
