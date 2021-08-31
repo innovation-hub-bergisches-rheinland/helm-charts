@@ -57,7 +57,7 @@ data:
 
     anomaly_counter:
       IN_TOPIC:
-        showcase-3d-printer_prusa-esp32: data.avsc
+        showcase-3d-printer_prusa-esp32: data_temp.avsc
         ender_printer_anomalies: anomalies.avsc
       IN_GROUP: showcase-3d-printer_anomaly-counter
       OUT_TOPIC:
@@ -67,9 +67,9 @@ data:
       TEMPERATURE_SOURCE_TAG_KEY: topic
       TEMPERATURE_SOURCE_TAG_VALUE: showcase-3d-printer/prusa-printer/temperature
       SET_TEMPERATURE_FIELD_KEY: t_nozzle_set
-  data.avsc: |
+  data_temp.avsc: |
     {
-      "name": "Data",
+      "name": "Data_Temp",
       "namespace": "de.ihbr",
       "type": "record",
       "fields": [
@@ -81,36 +81,20 @@ data:
             "type": "record",
             "fields": [
               {
-                "name": "ax",
+                "name": "t_bed_gvn",
                 "type": "float"
               },
               {
-                "name": "ay",
+                "name": "t_bed_set",
                 "type": "float"
               },
               {
-                "name": "az",
+                "name": "t_nozzle_gvn",
                 "type": "float"
               },
               {
-                "name": "gx",
+                "name": "t_nozzle_set",
                 "type": "float"
-              },
-              {
-                "name": "gy",
-                "type": "float"
-              },
-              {
-                "name": "gz",
-                "type": "float"
-              },
-              {
-                "name": "hum",
-                "type": "int"
-              },
-              {
-                "name": "temp",
-                "type": "int"
               },
               {
                 "name": "time",
