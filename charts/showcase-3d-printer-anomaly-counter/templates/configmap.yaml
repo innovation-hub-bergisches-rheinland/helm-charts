@@ -1,0 +1,166 @@
+{{- if not .Values.config.existingConfigMap }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "showcase-3d-printer-anomaly-counter.fullname" . }}
+  labels:
+    {{- include "showcase-3d-printer-anomaly-counter.labels" . | nindent 4 }}
+data:
+  anomalies.avsc: |
+    {
+      "name": "Anomalies",
+      "type": "record",
+      "namespace": "de.ihbr",
+      "fields": [
+        {
+          "name": "ax",
+          "type": "float"
+        },
+        {
+          "name": "ay",
+          "type": "float"
+        },
+        {
+          "name": "az",
+          "type": "float"
+        },
+        {
+          "name": "gx",
+          "type": "float"
+        },
+        {
+          "name": "gy",
+          "type": "float"
+        },
+        {
+          "name": "gz",
+          "type": "float"
+        },
+        {
+          "name": "hum",
+          "type": "int"
+        },
+        {
+          "name": "temp",
+          "type": "int"
+        },
+        {
+          "name": "time",
+          "type": "long"
+        }
+      ]
+    }
+  config.yaml: |
+    General:
+      KAFKA_BROKER_URL: kafka:9094
+      KAFKA_CONSUMER_TIMEOUT_MS: 120000
+
+    anomaly_counter:
+      IN_TOPIC:
+        showcase-3d-printer_prusa-esp32: data_temp.avsc
+        ender_printer_anomalies: anomalies.avsc
+      IN_GROUP: showcase-3d-printer_anomaly-counter
+      OUT_TOPIC:
+        showcase-3d-printer_anomaly-counter: anomaly_counter.avsc
+      RAW_DATA_TOPIC: showcase-3d-printer_prusa-esp32
+      ANOMALY_TOPIC: ender_printer_anomalies
+      TEMPERATURE_SOURCE_TAG_KEY: topic
+      TEMPERATURE_SOURCE_TAG_VALUE: showcase-3d-printer/prusa-printer/temperature
+      SET_TEMPERATURE_FIELD_KEY: t_nozzle_set
+  data_temp.avsc: |
+    {
+      "name": "Data_Temp",
+      "namespace": "de.ihbr",
+      "type": "record",
+      "fields": [
+        {
+          "name": "fields",
+          "type": {
+            "name": "sensorData",
+            "namespace": "de.ihbr.fields",
+            "type": "record",
+            "fields": [
+              {
+                "name": "t_bed_gvn",
+                "type": "float"
+              },
+              {
+                "name": "t_bed_set",
+                "type": "float"
+              },
+              {
+                "name": "t_nozzle_gvn",
+                "type": "float"
+              },
+              {
+                "name": "t_nozzle_set",
+                "type": "float"
+              },
+              {
+                "name": "time",
+                "type": "long"
+              }
+            ]
+          }
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "tags",
+          "type": {
+            "name": "metaTags",
+            "namespace": "de.ihbr.tags",
+            "type": "record",
+            "fields": [
+              {
+                "name": "host",
+                "type": "string"
+              },
+              {
+                "name": "topic",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        {
+          "name": "timestamp",
+          "type": "long"
+        }
+      ]
+    }
+  anomaly_counter.avsc: |
+    {
+      "name": "Anomaly_Count",
+      "namespace": "de.ihbr",
+      "type": "record",
+      "fields": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "start_timestamp",
+          "type": "long"
+        },
+        {
+          "name": "anomalies",
+          "type": "int"
+        },
+        {
+          "name": "duration",
+          "type": "int"
+        },
+        {
+          "name": "active",
+          "type": "boolean"
+        },
+        {
+          "name": "stop_timestamp",
+          "type": "long"
+        }
+      ]
+    }
+{{- end }}
