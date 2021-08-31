@@ -46,8 +46,8 @@ spec:
                 path: config.yaml
               - key: anomalies.avsc
                 path: schema/anomalies.avsc
-              - key: data.avsc
-                path: schema/data.avsc
+              - key: data_temp.avsc
+                path: schema/data_temp.avsc
               - key: anomaly_counter.avsc
                 path: schema/anomaly_counter.avsc
       {{- with .Values.nodeSelector }}
