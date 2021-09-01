@@ -57,7 +57,6 @@ data:
       IN_TOPIC:
         showcase-3d-printer_prusa-esp32: data_temp.avsc
         ender_printer_anomalies: anomalies.avsc
-      IN_GROUP: showcase-3d-printer_anomaly-counter
       OUT_TOPIC:
         showcase-3d-printer_anomaly-counter: anomaly_counter.avsc
   data_temp.avsc: |
