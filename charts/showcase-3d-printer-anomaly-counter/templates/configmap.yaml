@@ -53,7 +53,6 @@ data:
   config.yaml: |
     kafka:
       KAFKA_BROKER_URL: kafka:9094
-      KAFKA_CONSUMER_TIMEOUT_MS: 120000
       IN_TOPIC:
         showcase-3d-printer_prusa-esp32: data_temp.avsc
         ender_printer_anomalies: anomalies.avsc
