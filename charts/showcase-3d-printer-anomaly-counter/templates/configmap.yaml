@@ -51,13 +51,12 @@ data:
       ]
     }
   config.yaml: |
-    kafka:
-      KAFKA_BROKER_URL: kafka:9094
-      IN_TOPIC:
-        showcase-3d-printer_prusa-esp32: data_temp.avsc
-        ender_printer_anomalies: anomalies.avsc
-      OUT_TOPIC:
-        showcase-3d-printer_anomaly-counter: anomaly_counter.avsc
+    KAFKA_BROKER_URL: kafka:9094
+    IN_TOPIC:
+      showcase-3d-printer_prusa-esp32: data_temp.avsc
+      ender_printer_anomalies: anomalies.avsc
+    OUT_TOPIC:
+      showcase-3d-printer_anomaly-counter: anomaly_counter.avsc
   data_temp.avsc: |
     {
       "name": "Data_Temp",
