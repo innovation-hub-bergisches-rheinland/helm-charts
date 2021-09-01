@@ -2,5 +2,5 @@ apiVersion: v2
 name: showcase-3d-printer-anomaly-counter
 description: Anomaly Counter for 3D-Printer Showcase
 type: application
-version: 0.1.0
-appVersion: '0.1.0'
+version: 0.1.1
+appVersion: '0.1.1'
