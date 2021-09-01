@@ -62,11 +62,6 @@ data:
       IN_GROUP: showcase-3d-printer_anomaly-counter
       OUT_TOPIC:
         showcase-3d-printer_anomaly-counter: anomaly_counter.avsc
-      RAW_DATA_TOPIC: showcase-3d-printer_prusa-esp32
-      ANOMALY_TOPIC: ender_printer_anomalies
-      TEMPERATURE_SOURCE_TAG_KEY: topic
-      TEMPERATURE_SOURCE_TAG_VALUE: showcase-3d-printer/prusa-printer/temperature
-      SET_TEMPERATURE_FIELD_KEY: t_nozzle_set
   data_temp.avsc: |
     {
       "name": "Data_Temp",
