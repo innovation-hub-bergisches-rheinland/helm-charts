@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   showcase-3d-printer-anomaly-counter:
   - apiVersion: v2
+    appVersion: 0.1.5
+    created: "2021-09-02T11:34:58.152798596Z"
+    description: Anomaly Counter for 3D-Printer Showcase
+    digest: 9e772c2d1df9f827dd388616aa5b6d4bc7f1e84e3f11a33344da1237708d97c6
+    name: showcase-3d-printer-anomaly-counter
+    type: application
+    urls:
+    - https://github.com/innovation-hub-bergisches-rheinland/helm-charts/releases/download/showcase-3d-printer-anomaly-counter-0.1.5/showcase-3d-printer-anomaly-counter-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
     appVersion: 0.1.4
     created: "2021-09-01T15:34:19.473709872Z"
     description: Anomaly Counter for 3D-Printer Showcase
@@ -72,4 +82,4 @@ entries:
     urls:
     - https://github.com/innovation-hub-bergisches-rheinland/helm-charts/releases/download/showcase-3d-printer-anomaly-detection-0.1.0/showcase-3d-printer-anomaly-detection-0.1.0.tgz
     version: 0.1.0
-generated: "2021-09-01T15:34:19.473731372Z"
+generated: "2021-09-02T11:34:58.152838596Z"
