@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   dixday-predictions:
   - apiVersion: v2
+    appVersion: 0.1.2
+    created: "2021-09-29T14:43:37.011854347Z"
+    description: Predictions showcase for PdM demo
+    digest: b8fa25e614ecdc5b8182c791ee71a893a813a5d58bab2dc8c8c1d9d1fa4a5718
+    name: dixday-predictions
+    type: application
+    urls:
+    - https://github.com/innovation-hub-bergisches-rheinland/helm-charts/releases/download/dixday-predictions-0.1.2/dixday-predictions-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
     appVersion: 0.1.1
     created: "2021-09-29T13:03:24.403030283Z"
     description: Predictions showcase for PdM demo
@@ -123,4 +133,4 @@ entries:
     urls:
     - https://github.com/innovation-hub-bergisches-rheinland/helm-charts/releases/download/showcase-3d-printer-anomaly-detection-0.1.0/showcase-3d-printer-anomaly-detection-0.1.0.tgz
     version: 0.1.0
-generated: "2021-09-29T13:03:24.403057483Z"
+generated: "2021-09-29T14:43:37.01211625Z"
