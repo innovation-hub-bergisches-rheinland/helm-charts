@@ -1,0 +1,53 @@
+{{- if not .Values.config.existingConfigMap }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "dixday-predictions.fullname" . }}
+  labels:
+    {{- include "dixday-predictions.labels" . | nindent 4 }}
+data:
+  config.yaml: |
+    KAFKA_BROKER_URL: kafka:9094
+    IN_TOPIC:
+      dixday-predictions-temperature: temperature_data.avsc
+    OUT_TOPIC:
+      dixday-predictions-state: state.avsc
+    MIN_TRAIN_DATA: 50
+    DATA_TO_PREDICT: 100
+    TEMPERATURE_THRESHOLD: 25
+    FREQUENCY: 30
+    TEMPERATURE_KEY: temperature
+    TIMESTAMP_KEY: timestamp
+    PREDICTION_KEY: state
+
+  temperature_data.avsc: |
+    {
+      "name": "Temperature_Data",
+      "namespace": "de.ihbr",
+      "type": "record",
+      "fields": [
+        {
+          {
+            "name": "temperature",
+            "type": "float"
+          },
+          {
+            "name": "timestamp",
+            "type": "long"
+          }
+        }
+      
+    }
+  state.avsc: |
+    {
+      "name": "State",
+      "namespace": "de.ihbr",
+      "type": "record",
+      "fields": [
+        {
+          "name": "state",
+          "type": "int"
+        }
+      
+    }
+{{- end }}
