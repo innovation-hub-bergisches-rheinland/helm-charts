@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "showcase-3d-printer-anomaly-counter.name" -}}
+{{- define "dixday-predictions.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "showcase-3d-printer-anomaly-counter.fullname" -}}
+{{- define "dixday-predictions.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "showcase-3d-printer-anomaly-counter.chart" -}}
+{{- define "dixday-predictions.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "showcase-3d-printer-anomaly-counter.labels" -}}
-helm.sh/chart: {{ include "showcase-3d-printer-anomaly-counter.chart" . }}
-{{ include "showcase-3d-printer-anomaly-counter.selectorLabels" . }}
+{{- define "dixday-predictions.labels" -}}
+helm.sh/chart: {{ include "dixday-predictions.chart" . }}
+{{ include "dixday-predictions.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "showcase-3d-printer-anomaly-counter.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "showcase-3d-printer-anomaly-counter.name" . }}
+{{- define "dixday-predictions.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "dixday-predictions.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "showcase-3d-printer-anomaly-counter.serviceAccountName" -}}
+{{- define "dixday-predictions.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "showcase-3d-printer-anomaly-counter.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "dixday-predictions.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
