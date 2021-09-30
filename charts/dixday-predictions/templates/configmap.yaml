@@ -14,11 +14,10 @@ data:
       dixday-predictions-state: state.avsc
     MIN_TRAIN_DATA: 50
     DATA_TO_PREDICT: 100
-    TEMPERATURE_THRESHOLD: 25
     FREQUENCY: 30
     TEMPERATURE_KEY: temperature
     TIMESTAMP_KEY: timestamp
-    PREDICTION_KEY: state
+    PREDICTION_KEY: predictions
 
   temperature_data.avsc: |
     {
