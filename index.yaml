@@ -129,6 +129,16 @@ entries:
     version: 0.3.2
   prox-web-client:
   - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-12-09T03:06:39.667956987Z"
+    description: A Helm chart for Kubernetes
+    digest: cbfd30088d9ae8795136d741278b6893d79bd68d76e30c2e05825a4c8f7cd16b
+    name: prox-web-client
+    type: application
+    urls:
+    - https://github.com/innovation-hub-bergisches-rheinland/helm-charts/releases/download/prox-web-client-1.0.2/prox-web-client-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
     appVersion: 1.0.1
     created: "2021-12-08T14:29:30.408516744Z"
     description: A Helm chart for Kubernetes
@@ -240,4 +250,4 @@ entries:
     urls:
     - https://github.com/innovation-hub-bergisches-rheinland/helm-charts/releases/download/showcase-3d-printer-anomaly-detection-0.1.0/showcase-3d-printer-anomaly-detection-0.1.0.tgz
     version: 0.1.0
-generated: "2021-12-08T14:29:30.408551344Z"
+generated: "2021-12-09T03:06:39.667996988Z"
