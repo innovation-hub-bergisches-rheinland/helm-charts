@@ -67,7 +67,7 @@ Looks if there's an existing secret and reuse its password. If not it generates 
 {{- define "prox-professor-profile-service.superUserPassword" -}}
 {{- $secret := (lookup "v1" "Secret" .Release.Namespace (include "prox-professor-profile-service.fullname" .) ) -}}
   {{- if $secret -}}
-    {{-  get $secret "data" "superUserPassword" -}}
+    {{-  index $secret "data" "superUserPassword" -}}
   {{- else -}}
     {{- (randAlphaNum 40) | b64enc | quote -}}
   {{- end -}}
@@ -79,7 +79,7 @@ Looks if there's an existing secret and reuse its password. If not it generates 
 {{- define "prox-professor-profile-service.replicationUserPassword" -}}
 {{- $secret := (lookup "v1" "Secret" .Release.Namespace (include "prox-professor-profile-service.fullname" .) ) -}}
   {{- if $secret -}}
-    {{-  get $secret "data" "replicationUserPassword" -}}
+    {{-  index $secret "data" "replicationUserPassword" -}}
   {{- else -}}
     {{- (randAlphaNum 40) | b64enc | quote -}}
   {{- end -}}
