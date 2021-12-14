@@ -75,6 +75,16 @@ entries:
   prox-company-profile-service:
   - apiVersion: v2
     appVersion: 0.3.2
+    created: "2021-12-14T16:39:26.143316203Z"
+    description: A Helm chart for Kubernetes
+    digest: 0cbe6d4a27ce6a7ea06344af7cbe404287fe096e3bd8bf90afe0385fc6c31ca0
+    name: prox-company-profile-service
+    type: application
+    urls:
+    - https://github.com/innovation-hub-bergisches-rheinland/helm-charts/releases/download/prox-company-profile-service-0.3.3/prox-company-profile-service-0.3.3.tgz
+    version: 0.3.3
+  - apiVersion: v2
+    appVersion: 0.3.2
     created: "2021-12-08T14:29:28.872075302Z"
     description: A Helm chart for Kubernetes
     digest: 8bd863422ff17d88f84c27320698c71df8c1ccceb7264c6effd12fe559c95f55
@@ -86,6 +96,16 @@ entries:
   prox-professor-profile-service:
   - apiVersion: v2
     appVersion: 0.2.1
+    created: "2021-12-14T16:39:26.353323531Z"
+    description: A Helm chart for Kubernetes
+    digest: 28742e2a7a4e7325615f5101d15ba63c131672866568aa2a42479ad4d8950df0
+    name: prox-professor-profile-service
+    type: application
+    urls:
+    - https://github.com/innovation-hub-bergisches-rheinland/helm-charts/releases/download/prox-professor-profile-service-0.2.2/prox-professor-profile-service-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: 0.2.1
     created: "2021-12-08T14:29:29.599901371Z"
     description: A Helm chart for Kubernetes
     digest: a23df0e64df8c58dc2280b28b6125627238970cd9d36887a6d412683f840f9c4
@@ -95,6 +115,16 @@ entries:
     - https://github.com/innovation-hub-bergisches-rheinland/helm-charts/releases/download/prox-professor-profile-service-0.2.1/prox-professor-profile-service-0.2.1.tgz
     version: 0.2.1
   prox-project-service:
+  - apiVersion: v2
+    appVersion: 0.3.2
+    created: "2021-12-14T16:39:26.577140573Z"
+    description: A Helm chart for Kubernetes
+    digest: fed12012ffd6862de23d930531d6353025b11e7c3a82a814ae44448e396a82c3
+    name: prox-project-service
+    type: application
+    urls:
+    - https://github.com/innovation-hub-bergisches-rheinland/helm-charts/releases/download/prox-project-service-0.3.3/prox-project-service-0.3.3.tgz
+    version: 0.3.3
   - apiVersion: v2
     appVersion: 0.3.2
     created: "2021-12-08T14:29:29.807819221Z"
@@ -117,6 +147,16 @@ entries:
     - https://github.com/innovation-hub-bergisches-rheinland/helm-charts/releases/download/prox-service-discovery-0.3.2/prox-service-discovery-0.3.2.tgz
     version: 0.3.2
   prox-tag-service:
+  - apiVersion: v2
+    appVersion: 0.3.2
+    created: "2021-12-14T16:39:26.792446029Z"
+    description: A Helm chart for Kubernetes
+    digest: 86d4406afb30d319029ae9762be83429a03e11a3d27511d787c92105838db7df
+    name: prox-tag-service
+    type: application
+    urls:
+    - https://github.com/innovation-hub-bergisches-rheinland/helm-charts/releases/download/prox-tag-service-0.3.3/prox-tag-service-0.3.3.tgz
+    version: 0.3.3
   - apiVersion: v2
     appVersion: 0.3.2
     created: "2021-12-08T14:29:30.222279332Z"
@@ -250,4 +290,4 @@ entries:
     urls:
     - https://github.com/innovation-hub-bergisches-rheinland/helm-charts/releases/download/showcase-3d-printer-anomaly-detection-0.1.0/showcase-3d-printer-anomaly-detection-0.1.0.tgz
     version: 0.1.0
-generated: "2021-12-09T03:06:39.667996988Z"
+generated: "2021-12-14T16:39:26.792602941Z"
