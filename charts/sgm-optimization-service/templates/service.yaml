@@ -20,6 +20,6 @@ spec:
   {{- end }}
   {{- if .Values.service.ports}}
   ports:
-  {{ .Values.service.ports | indent 6 }}
+  {{ .Values.service.ports | indent 8 }}
   {{- end }}
   type: {{ default "ClusterIP" .Values.service.type }}
