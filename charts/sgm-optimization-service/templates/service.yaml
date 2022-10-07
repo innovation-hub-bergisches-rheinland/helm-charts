@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ template "sgm-optimization-service.fullname" . }}
   labels:
-  {{- include "sgm-optimization-service.labels" . | nindent 2 }}
+  {{- include "sgm-optimization-service.labels" . | nindent 4 }}
 spec:
   {{- if .Values.service.clusterIP }}
   clusterIP: {{ .Values.service.clusterIP }}
