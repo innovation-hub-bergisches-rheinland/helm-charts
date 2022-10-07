@@ -3,14 +3,14 @@ kind: Service
 metadata:
   name: {{ template "sgm-optimization-service.fullname" . }}
   labels:
-    {{- include "sgm-optimization-service.labels" . | nindent 4 }}
+    {{- include "sgm-optimization-service.labels" . | nindent 2 }}
 spec:
   {{- if .Values.service.clusterIP }}
   clusterIP: {{ .Values.service.clusterIP }}
   {{- end }}
   {{- if .Values.service.externalIPs }}
   externalIPs:
-  {{ toYaml .Values.service.externalIPs | indent 4 }}
+  {{ toYaml .Values.service.externalIPs | indent 2 }}
   {{- end }}
   {{- if .Values.service.externalTrafficPolicy }}
   externalTrafficPolicy: {{ .Values.service.externalTrafficPolicy }}
@@ -20,6 +20,6 @@ spec:
   {{- end }}
   {{- if .Values.service.ports}}
   ports:
-  {{ .Values.service.ports | indent 8 }}
+  {{ .Values.service.ports | indent 2 }}
   {{- end }}
   type: {{ default "ClusterIP" .Values.service.type }}
