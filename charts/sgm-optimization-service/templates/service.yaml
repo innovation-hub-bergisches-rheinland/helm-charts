@@ -20,6 +20,6 @@ spec:
   {{- end }}
   {{- if .Values.service.ports}}
   ports:
-  {{ .Values.service.ports . | indent 2 }}
+  {{ toYaml .Values.service.ports | indent 2 }}
   {{- end }}
   type: {{ default "ClusterIP" .Values.service.type }}
