@@ -18,5 +18,6 @@ spec:
   {{- if .Values.service.loadBalancerIP }}
   loadBalancerIP: {{ .Values.service.loadBalancerIP }}
   {{- end }}
-  port: {{ default 8080 .Values.service.port }}
+  ports:
+{{ include "sgm-optimization-service.servicePorts" . | indent 4 -}}
   type: {{ default "ClusterIP" .Values.serviceType }}
