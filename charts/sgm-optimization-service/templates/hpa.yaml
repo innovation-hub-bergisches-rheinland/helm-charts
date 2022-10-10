@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "sgm-optimization-service.fullname" . }}
+  name: {{ include "sgm-optimization-service-service.fullname" . }}
   labels:
-    {{- include "sgm-optimization-service.labels" . | nindent 4 }}
+    {{- include "sgm-optimization-service-service.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "sgm-optimization-service.fullname" . }}
+    name: {{ include "sgm-optimization-service-service.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:
