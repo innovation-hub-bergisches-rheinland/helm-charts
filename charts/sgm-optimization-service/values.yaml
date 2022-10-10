@@ -1,21 +1,14 @@
 # Default values for sgm-optimization-service.
-
-config:
-    # The name of the config map to use.
-    # If not set a default config map will be created
-    existingConfigMap: ""
-
-# Specifies the image to be used.
-image:
-    registry: quay.io/innovation-hub-bergisches-rheinland
-    # Overrides the image repository whose default is the chart name.
-    repository: ""
-    # Overrides the image tag whose default is the chart appVersion.
-    tag: ""
-
-    pullPolicy: IfNotPresent
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
 
 replicaCount: 1
+
+image:
+    repository: quay.io/innovation-hub-bergisches-rheinland/sgm-optimization-service
+    pullPolicy: IfNotPresent
+    # Overrides the image tag whose default is the chart appVersion.
+    tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
@@ -30,14 +23,12 @@ serviceAccount:
     # If not set and create is true, a name is generated using the fullname template
     name: ""
 
-# Annotations to add to the pod
 podAnnotations: {}
-# Sets the security context of the pod
+
 podSecurityContext:
     {}
     # fsGroup: 2000
 
-# Sets the security context of the container
 securityContext:
     {}
     # capabilities:
@@ -87,8 +78,14 @@ autoscaling:
     maxReplicas: 100
     targetCPUUtilizationPercentage: 80
     # targetMemoryUtilizationPercentage: 80
+
 nodeSelector: {}
 
 tolerations: []
 
 affinity: {}
+
+config:
+    # The name of the config map to use.
+    # If not set a default config map will be created
+    existingConfigMap: ""
