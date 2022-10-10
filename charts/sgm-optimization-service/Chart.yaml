@@ -3,4 +3,4 @@ name: sgm-optimization-service
 description: Rest Interface for Optimization Frontend
 type: application
 version: 0.1.2
-appVersion: "v0.1.1"
+appVersion: "v0.1.2"
