@@ -190,6 +190,16 @@ entries:
     version: 1.0.1
   sgm-optimization-service:
   - apiVersion: v2
+    appVersion: v0.2.2
+    created: "2022-10-11T12:04:46.952427443Z"
+    description: Rest Interface for Optimization Frontend
+    digest: d6205095de1d2ce060e218f41cd24b4bd8a94d6d96588b112d6fdacc17af5059
+    name: sgm-optimization-service
+    type: application
+    urls:
+    - https://github.com/innovation-hub-bergisches-rheinland/helm-charts/releases/download/sgm-optimization-service-0.2.2/sgm-optimization-service-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
     appVersion: v0.1.4
     created: "2022-10-10T12:42:25.524275207Z"
     description: Rest Interface for Optimization Frontend
@@ -331,4 +341,4 @@ entries:
     urls:
     - https://github.com/innovation-hub-bergisches-rheinland/helm-charts/releases/download/showcase-3d-printer-anomaly-detection-0.1.0/showcase-3d-printer-anomaly-detection-0.1.0.tgz
     version: 0.1.0
-generated: "2022-10-10T12:42:25.524373909Z"
+generated: "2022-10-11T12:04:46.952498744Z"
